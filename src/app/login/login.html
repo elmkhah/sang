@@ -1,0 +1,39 @@
+
+<div class="w-screen h-screen flex flex-row items-center relative justify-center z-10 font-[IRANSans]">
+  <div class="w-1/3 h-screen bg-white  flex justify-center flex-col gap-10 p-20 shadow-2xl items-center">
+
+
+    <div>
+      <h1 class="text-3xl font-black">ورود به حساب کاربری</h1>
+    </div>
+
+    <div class="flex flex-row justify-between items-center w-full">
+      <label>پست الکترونیکی</label>
+      <input  type="email" placeholder="example@gmail.com" [(ngModel)]="email" class="placeholder:text-gray-400 focus:outline-none py-2 px-3 rounded-lg border-2 border-gray-300">
+    </div>
+
+
+    <div class="flex flex-row justify-between items-center w-full">
+      <label>رمز عبور </label>
+      <input type="password" [(ngModel)]="password" class="focus:outline-none py-2 px-3 rounded-lg border-2 border-gray-300">
+    </div>
+
+
+    <div class="w-full">
+      <p-button (click)="loginClick()" label="ورود"  styleClass="w-full" />
+
+    </div>
+<!--    [loading]="loading" (onClick)="load()-->
+
+    <div class="flex flex-row justify-center gap-3">
+      <p class="text-gray-400">حساب کاربری ندارید؟</p>
+      <a routerLink="/login/signup/1"><p class="cursor-pointer"> ثبت نام کنید</p></a>
+    </div>
+
+
+    <p class="text-sm text-gray-400">ورود به سایت به منزله پذیرش قوانین می باشد</p>
+  </div>
+  <div class="w-2/3  h-screen flex items-center flex-col justify-center">
+      <img src="vector/Secure-login.png" class="w-1/2"/>
+  </div>
+</div>

@@ -1,0 +1,66 @@
+<div class="h-full w-full flex gap-10 flex-col justify-between p-10">
+  <!--  ناوبار بالا-->
+    <div
+      class="w-full shadow-[0_0_20px_0_rgba(0,0,0,0.07)] items-center py-5 px-20 rounded-xl flex flex-row justify-between"
+    >
+      <p class="font-black text-2xl">آزمون</p>
+
+      <div class="flex flex-row gap-10 items-center">
+        <div class="flex flex-row gap-5 invert-50 h-6">
+          <img src="svg/Home%20Smile%20Angle.svg" />
+          <img src="svg/Home%20Smile%20Angle.svg" />
+          <img src="svg/Home%20Smile%20Angle.svg" />
+          <img src="svg/Home%20Smile%20Angle.svg" />
+        </div>
+
+        <div
+          class="flex flex-row gap-3 items-center h-10 p-3 border-2 border-gray-300 rounded-lg"
+        >
+          <img
+            src="png/golden-coin-money-dollar-icon_24877-83458%201.png"
+            class="h-8"
+          />
+          <p class="font-black text-gray-600">
+            {{ localStorage.getItem("coin") }}
+          </p>
+        </div>
+      </div>
+    </div>
+
+  @if (this.isLoading) {
+    <p>سلام دنیا</p>
+
+  } @else {
+    <div class="flex flex-col gap-4 w-full p-5 max-h-screen overflow-y-auto">
+      @for (his of history; track his.chatID) {
+
+        <!-- پیام کاربر -->
+        <div class="flex justify-end">
+          <div class="bg-blue-500 text-white px-4 py-2 rounded-2xl max-w-[70%]">
+            <p>{{ his.userInput }}</p>
+            <span class="text-xs text-gray-200">{{ his.date  }}</span>
+          </div>
+        </div>
+
+        <!-- پیام بات -->
+        <div class="flex justify-start">
+          <div class="bg-gray-200 text-black px-4 py-2 rounded-2xl max-w-[70%]">
+            <p>{{ his.chatResponse }}</p>
+            <span class="text-xs text-gray-500">{{ his.date  }}</span>
+          </div>
+        </div>
+
+      }
+      <div #bottom></div>
+
+    </div>
+
+    <div class="w-full h-15 gap-10 flex flex-row justify-between">
+      <div class="flex flex-row w-full p-3 rounded-2xl border-2 border-gray-400">
+        سیبلی
+      </div>
+      <img src="svg/Clipboard%20Text.svg">
+    </div>
+  }
+
+</div>

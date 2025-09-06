@@ -1,0 +1,84 @@
+<div class="w-screen h-screen flex flex-row overflow-x-hidden font-[IRANSans]">
+  <div class="w-1/5 p-10 flex gap-5 flex-col items-center justify-around">
+    <div class="p-2 flex flex-col rounded-xl w-full items-center">
+      <img
+        src="logo/logo.png"
+        class="h-30 hover:scale-110 transition-all duration-300"
+      />
+    </div>
+
+    <div class="flex flex-col w-full gap-5 items-center justify-center">
+      <a
+        routerLink="/dashboard/home"
+        class="w-full"
+        routerLinkActive="text-white font-black bg-[#14AE5C] rounded-xl"
+      >
+        <div
+          class="shadow-[0_0_20px_0_rgba(0,0,0,0.07)] p-5 rounded-xl w-full group hover:bg-[#14AE5C] hover:text-white hover:scale-105 cursor-pointer transition-all duration-300"
+        >
+          <div class="flex flex-row justify-start gap-7 items-center">
+            <img
+              routerLinkActive="invert-100"
+              src="svg/Home%20Smile%20Angle.svg"
+              class="h-8 group-hover:invert-100"
+            />
+            <p>خانه</p>
+          </div>
+        </div>
+      </a>
+
+      <a
+        routerLink="/dashboard/chat"
+        class="w-full"
+        routerLinkActive="text-white font-black bg-[#14AE5C] rounded-xl"
+      >
+        <div
+          class="shadow-[0_0_20px_0_rgba(0,0,0,0.07)] group p-5 rounded-xl w-full hover:bg-[#14AE5C] hover:text-white hover:scale-105 cursor-pointer transition-all duration-300"
+        >
+          <div class="flex flex-row justify-start gap-7 items-center">
+            <img
+              routerLinkActive="invert-100"
+              src="svg/Chat%20Dots.svg"
+              class="h-8 group-hover:invert-100"
+            />
+            <p>چت بات</p>
+          </div>
+        </div>
+      </a>
+
+      <a
+        routerLink="/dashboard/test"
+        class="w-full"
+        routerLinkActive="text-white font-black bg-[#14AE5C] rounded-xl"
+      >
+        <div
+          class="shadow-[0_0_20px_0_rgba(0,0,0,0.07)] group p-5 rounded-xl w-full hover:bg-[#14AE5C] hover:text-white hover:scale-105 cursor-pointer transition-all duration-300"
+        >
+          <div class="flex flex-row justify-start gap-7 items-center">
+            <img
+              routerLinkActive="invert-100"
+              src="svg/Clipboard%20Text.svg"
+              class="h-8 group-hover:invert-100"
+            />
+            <p>آزمون ها</p>
+          </div>
+        </div>
+      </a>
+
+      <div
+        class="shadow-[0_0_20px_0_rgba(0,0,0,0.07)] p-5 rounded-xl w-full hover:bg-[#14AE5C] hover:text-white hover:scale-105 cursor-pointer transition-all duration-300"
+      >
+        <div class="flex flex-row justify-start gap-7 items-center">
+          <img src="svg/User%20Circle.svg" class="h-8" />
+          <p>پروفایل</p>
+        </div>
+      </div>
+    </div>
+
+    <div>خروچ</div>
+  </div>
+
+  <div class="w-4/5 h-screen">
+    <router-outlet></router-outlet>
+  </div>
+</div>

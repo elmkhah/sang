@@ -1,0 +1,55 @@
+<div class="w-full h-screen p-10 flex flex-col gap-10">
+  <div
+    class="w-full shadow-[0_0_20px_0_rgba(0,0,0,0.07)] py-5 px-20 rounded-xl flex flex-row justify-between"
+  >
+    <p class="font-black">داشبورد کاربری</p>
+    <img src="svg/Home%20Smile%20Angle.svg" />
+  </div>
+
+  <div class="flex flex-row w-full gap-10">
+    <div class="flex flex-col w-3/4 gap-10">
+      <div
+        class="shadow-[0_0_20px_0_rgba(0,0,0,0.07)] rounded-xl w-full px-10 py-5 flex flex-col gap-3"
+      >
+        <p class="text-gray-500 text-sm">
+          سلام {{ localStorage.getItem("name") }} 👋
+        </p>
+        <h1 class="text-2xl font-bold">به سنگ صبور خوش اومدی!</h1>
+        <p class="text-gray-500 text-sm">
+          سنگ صبور دوست خوبت توی وقتاییه که شاید حالت مثل همیشه خوب نیست. همین
+          الان میتونی با سنگ صبور درد و دل کنی تا حالت بهتر بشه.
+        </p>
+        <div class="w-full flex flex-row justify-end gap-5">
+          <p-button (click)="this.router.navigateByUrl('about')" severity="secondary" size="small" variant="outlined"
+            >درباره ما</p-button
+          >
+          <p-button
+            (click)="this.router.navigateByUrl('dashboard/chat')"
+            severity="primary"
+            size="small"
+            >شروع چت</p-button
+          >
+        </div>
+      </div>
+
+      <div
+        class="shadow-[0_0_20px_0_rgba(0,0,0,0.07)] rounded-xl w-full cursor-pointer"
+        (click)="this.router.navigateByUrl('dashboard/test')"
+      >
+        <img src="image/banner1.jpg" class="rounded-xl" />
+      </div>
+    </div>
+
+    <div class="flex flex-col w-1/4 gap-10">
+      <div
+        class="shadow-[0_0_20px_0_rgba(0,0,0,0.07)] cursor-pointer rounded-xl w-full"
+        (click)="this.router.navigateByUrl('dashboard/chat')"
+      >
+        <img src="image/banner2.jpg" class="rounded-xl" />
+      </div>
+      <div class="shadow-[0_0_20px_0_rgba(0,0,0,0.07)] p-5 rounded-xl w-full">
+        شسیبیسش
+      </div>
+    </div>
+  </div>
+</div>

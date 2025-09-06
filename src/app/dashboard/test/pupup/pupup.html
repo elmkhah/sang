@@ -1,0 +1,57 @@
+@if (show) {
+  <div     class="fixed inset-0 bg-[rgba(0,0,0,0.4)] flex items-center justify-center"
+           (click)="close.emit()" >
+
+
+    <div class="bg-white p-4 rounded-xl flex flex-col gap-3 w-96 shadow" (click)="$event.stopPropagation()">
+
+      <div class=" flex flex-row justify-between items-center">
+        <p>جزییات آزمون</p>
+        <img src="svg/Alt%20Arrow%20Left.svg" class="invert-50 cursor-pointer"  (click)="close.emit()">
+      </div>
+      <div class="bg-gray-200 w-full h-0.5" ></div>
+
+      <div class="flex flex-col gap-5 p-5">
+        <div class="flex flex-col justify-between">
+          <p class="text-gray-500 text-xs">شناسه آزمون: </p>
+          <p>{{item.id}}</p>
+        </div>
+
+
+        <div class="flex flex-col justify-between">
+          <p class="text-gray-500 text-xs">عنوان آزمون:</p>
+          <p>{{item.testName}}</p>
+        </div>
+
+
+        <div class="flex flex-col justify-between">
+          <p class="text-gray-500 text-xs">تاریخ انجام آزمون: </p>
+          <p>{{item.date}}</p>
+        </div>
+
+
+        <div class="flex flex-col justify-between">
+          <p class="text-gray-500 text-xs">نتیجه:</p>
+          <p>{{item.result}}</p>
+        </div>
+
+
+        <div class="flex flex-col justify-between">
+          <p class="text-gray-500 text-xs">توضیحات: </p>
+          <p>{{item.detail}}</p>
+        </div>
+
+      </div>
+
+
+      <div class="flex flex-row gap-5 w-full">
+        <button (click)="Confirm()" class="w-1/2 bg-red-600 hover:bg-red-500 transition cursor-pointer text-white px-3 py-2 rounded-lg">
+          گزارش خطا
+        </button>
+      <button (click)="Confirm()" class="w-1/2 bg-[#14ae5c] hover:bg-[#14a35c] transition cursor-pointer text-white px-3 py-2 rounded-lg">
+        بازگشت
+      </button>
+      </div>
+    </div>
+  </div>
+}

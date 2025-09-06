@@ -89,6 +89,10 @@ export class Master {
   }
 
 
+
+
+
+
   testList():Observable<HttpResponse<any>> {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json',
       })
@@ -98,6 +102,20 @@ export class Master {
       {headers,observe: 'response'});
   }
 
+  test(testName:string,answer:any):Observable<HttpResponse<any>> {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${localStorage.getItem('token')}`
+    });
+    return this.http.post(
+      'https://sang-e-saboor-production.ir/personality_test/test/?test=' + testName,
+      { answers:answer },
+      {
+        headers: headers,
+        observe: 'response'
+      }
+    );
+  }
 
 
   testHistory():Observable<HttpResponse<any>> {
@@ -108,6 +126,43 @@ export class Master {
       {headers,observe: 'response'});
   }
 
+  testResult():Observable<HttpResponse<any>> {
+      const headers = new HttpHeaders({ 'Content-Type': 'application/json',
+        'Authorization': `Bearer ${localStorage.getItem('token')}`})
+
+    return this.http.get('    https://sang-e-saboor-production.ir/personality_test/testresult/?testName=GAD-7',
+      {headers,observe: 'response'});
+  }
+
+
+  testInit(id:string):Observable<HttpResponse<any>> {
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json',
+      'Authorization': `Bearer ${localStorage.getItem('token')}`})
+
+    return this.http.get('https://sang-e-saboor-production.ir/personality_test/testinit/?testName=MBTI',
+      {headers,observe: 'response'});
+  }
+
+  testDetail(id:number):Observable<HttpResponse<any>> {
+
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json',
+    })
+
+
+
+    return this.http.get("https://sang-e-saboor-production.ir/personality_test/testdetail/?testId=" + id
+       , {headers,observe: 'response'}
+    )
+  }
+
+  questions(id:number,start:number,end:number):Observable<HttpResponse<any>> {
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json',
+      'Authorization': `Bearer ${localStorage.getItem('token')}`})
+    return this.http.get('https://sang-e-saboor-production.ir/personality_test/questionsdetail/?testId=' + id +'&start='+ start +'&end='+ end
+       , {headers,observe: 'response'}
+    )
+
+  }
 }
 
 

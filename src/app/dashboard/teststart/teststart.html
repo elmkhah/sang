@@ -1,0 +1,66 @@
+<div class="h-full w-full flex flex-col justify-between p-10">
+  <!--  ناوبار بالا-->
+  <div class="flex flex-col gap-10">
+    <div
+      class="w-full shadow-[0_0_20px_0_rgba(0,0,0,0.07)] items-center py-5 px-20 rounded-xl flex flex-row justify-between"
+    >
+      <p class="font-black text-2xl">آزمون {{ testName }}</p>
+
+      <div class="flex flex-row gap-10 items-center">
+        <div class="flex flex-row gap-5 invert-50 h-6">
+          <img src="svg/Home%20Smile%20Angle.svg" />
+          <img src="svg/Home%20Smile%20Angle.svg" />
+          <img src="svg/Home%20Smile%20Angle.svg" />
+          <img src="svg/Home%20Smile%20Angle.svg" />
+        </div>
+
+        <div
+          class="flex flex-row gap-3 items-center h-10 p-3 border-2 border-gray-300 rounded-lg"
+        >
+          <img
+            src="png/golden-coin-money-dollar-icon_24877-83458%201.png"
+            class="h-8"
+          />
+          <p class="font-black text-gray-600">
+            {{ localStorage.getItem("coin") }}
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-col justify-center">
+      <div class="flex flex-col gap-5 w-2/3">
+        <p class="bg-gray-50 p-5 font-bold rounded-lg">
+          {{ qlist[currentq].text }}
+        </p>
+
+        @for (c of qlist[currentq].choices; track c.key) {
+          <div class="flex flex-row gap-10 items-center">
+            <p-radiobutton
+              (onClick)="selectOption(c.key)"
+              [value]="c.key"
+              [(ngModel)]="answers[currentq]"
+            ></p-radiobutton>
+            <label>{{ c?.text }}</label>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+
+  <div class="w-full flex flex-row justify-around">
+    <p class="cursor-pointer p-3 font-black" (click)="prevQ()">قبلی</p>
+
+    <p>{{ currentq + 1 }} از {{ qcount }}</p>
+
+    @if (currentq + 1 < qcount) {
+      <p class="cursor-pointer p-3 font-black">بعدی</p>
+    } @else {
+      <p
+        class="rounded-md cursor-pointer p-3 bg-[#14ae5c] text-white font-black"
+      >
+        ارسال پاسخ ها
+      </p>
+    }
+  </div>
+</div>
