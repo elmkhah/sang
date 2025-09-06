@@ -1,24 +1,29 @@
-import { ApplicationConfig, provideBrowserGlobalErrorListeners, provideZonelessChangeDetection } from '@angular/core';
+import {
+  ApplicationConfig,
+  provideBrowserGlobalErrorListeners,
+  provideZonelessChangeDetection,
+} from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { providePrimeNG } from 'primeng/config';
 import Aura from '@primeuix/themes/aura';
 import { routes } from './app.routes';
-import {provideHttpClient} from '@angular/common/http';
+import { provideHttpClient } from '@angular/common/http';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
+    { provide: LocationStrategy, useClass: HashLocationStrategy },
     provideZonelessChangeDetection(),
     provideRouter(routes),
     providePrimeNG({
       theme: {
         preset: Aura,
         options: {
-          darkModeSelector: false
-        }
-      }
+          darkModeSelector: false,
+        },
+      },
     }),
-    provideHttpClient()
-  ]
+    provideHttpClient(),
+  ],
 };
-
