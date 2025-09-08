@@ -13,12 +13,13 @@ import { Blog } from './dashboard/blog/blog';
 import { Article } from './features/article/article';
 import { Articlelist } from './features/articlelist/articlelist';
 import { Testhistory } from './features/testhistory/testhistory';
+import { Addarticle } from './features/addarticle/addarticle';
 
 export const routes: Routes = [
   { path: '', component: Landing, pathMatch: 'full' },
+  { path: 'addarticle', component: Addarticle },
   {
     path: 'blog',
-    component: Blog,
     children: [
       { path: '', component: Articlelist, pathMatch: 'full' },
       { path: 'article/:articleId', component: Article },

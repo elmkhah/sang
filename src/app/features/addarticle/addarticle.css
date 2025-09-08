@@ -1,0 +1,7 @@
+/* در کامپوننت خودت */
+::ng-deep .rtl-editor .ql-editor {
+  direction: rtl;      /* راست به چپ */
+  text-align: right;   /* راست‌چین */
+  font-size: 1.2rem;   /* فونت بزرگ‌تر */
+  min-height: 200px;
+}

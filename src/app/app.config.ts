@@ -9,6 +9,7 @@ import Aura from '@primeuix/themes/aura';
 import { routes } from './app.routes';
 import { provideHttpClient } from '@angular/common/http';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { provideQuillConfig } from 'ngx-quill';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -25,5 +26,15 @@ export const appConfig: ApplicationConfig = {
       },
     }),
     provideHttpClient(),
+    provideQuillConfig({
+      modules: {
+        toolbar: [
+          ['bold', 'italic', 'underline'], // استایل‌های ساده
+          [{ list: 'ordered' }, { list: 'bullet' }], // لیست‌ها
+          ['link', 'image'], // لینک و تصویر
+        ],
+      },
+      theme: 'snow',
+    }),
   ],
 };

@@ -45,10 +45,10 @@
 
 
       <div class="flex flex-row gap-5 w-full">
-        <button (click)="Confirm()" class="w-1/2 bg-red-600 hover:bg-red-500 transition cursor-pointer text-white px-3 py-2 rounded-lg">
-          گزارش خطا
+        <button (click)="url='/blog/article/'+item.relatedArticleId;this.router.navigateByUrl(url)" class="w-1/2 bg-[#14ae5c] hover:bg-[#14a35c] transition cursor-pointer text-white px-3 py-2 rounded-lg">
+          اطلاعات بیشتر
         </button>
-      <button (click)="Confirm()" class="w-1/2 bg-[#14ae5c] hover:bg-[#14a35c] transition cursor-pointer text-white px-3 py-2 rounded-lg">
+      <button (click)="Confirm()" class="w-1/2 bg-gray-400 hover:bg-gray-500 transition cursor-pointer text-white px-3 py-2 rounded-lg">
         بازگشت
       </button>
       </div>
