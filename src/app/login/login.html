@@ -1,10 +1,10 @@
 
-<div class="w-screen h-screen flex flex-col-reverse md:flex-row items-center relative justify-center z-10 font-[IRANSans]">
-  <div class="md:w-2/5 h-2/5 md:h-screen bg-white  flex justify-center flex-col gap-7 p-10 md:p-20 shadow-none md:shadow-2xl items-center">
+<div class="w-screen h-screen flex flex-col-reverse md:flex-row items-center  justify-center z-10 font-[IRANSans]">
+  <div class="md:w-2/5 h-3/5 md:h-screen   flex justify-center flex-col gap-5 p-10 md:p-20 shadow-none md:shadow-2xl items-center">
 
 
     <div>
-      <h1 class="text-xl md:text-3xl font-black">ورود به حساب کاربری</h1>
+      <h1 class="text-2xl md:text-3xl font-black">ورود به حساب کاربری</h1>
     </div>
 
     <div class="flex flex-row justify-between gap-3 items-center w-full">
@@ -32,8 +32,10 @@
 
 
     <p class="text-xs text-gray-400">ورود به سایت به منزله پذیرش قوانین می باشد</p>
+    <p class="text-xs text-black cursor-pointer " (click)="this.router.navigateByUrl('/')">بازگشت</p>
+
   </div>
-  <div class="w-full  h-1/2 flex items-center flex-col justify-center">
-      <img src="vector/Secure-login.png" class="w-full md:w-1/2"/>
+  <div class="w-full pt-10 md:pt-0 h-2/5 flex items-center flex-col justify-center">
+      <img src="vector/Secure-login.png" class="w-4/5 md:w-1/2"/>
   </div>
 </div>

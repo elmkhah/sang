@@ -2,26 +2,30 @@ import { Component } from '@angular/core';
 import { Master } from '../../service/master';
 import { SkeletonModule } from 'primeng/skeleton';
 import moment from 'moment-jalaali';
-import {ChangeDetectorRef} from '@angular/core';
-import {PaginatorModule} from 'primeng/paginator';
+import { ChangeDetectorRef } from '@angular/core';
+import { PaginatorModule } from 'primeng/paginator';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-testhistory',
   standalone: true,
   imports: [SkeletonModule, PaginatorModule],
   templateUrl: './testhistory.html',
-  styleUrl: './testhistory.css'
+  styleUrl: './testhistory.css',
 })
 export class Testhistory {
-
   history: any[] = [];
   pagedItems: any[] = [];
   isLoading = false;
   count = 0;
   rows = 5;
-  first=0;
+  first = 0;
 
-
-  constructor(public master: Master,public changeDetector: ChangeDetectorRef) {}
+  constructor(
+    public master: Master,
+    public changeDetector: ChangeDetectorRef,
+    public router: Router,
+  ) {}
 
   ngOnInit() {
     this.isLoading = true;
@@ -39,17 +43,26 @@ export class Testhistory {
 
         this.count = this.history.length;
         this.isLoading = false;
-        this.updatePage()
+        this.updatePage();
         console.log(this.pagedItems);
         this.changeDetector.detectChanges();
       },
       error: (err) => {
-        console.error('خطا در دریافت تاریخچه تست:', err);
-        this.isLoading = false;
-        this.changeDetector.detectChanges();
-      }
-    });
+        console.log('error handler اجرا شد');
+        console.log('status:', err.status, 'statusText:', err.statusText);
+        console.log('raw error:', err.error);
 
+        if (err.status === 500) {
+          console.error('خطای سرور 500:', err);
+          // اینجا مثلاً یه پیام یوزرفرندلی بده
+          console.log('خطای داخلی سرور. لطفا بعدا دوباره تلاش کنید.');
+        } else if (err.status === 401 || err.status === 403) {
+          localStorage.removeItem('token');
+          localStorage.setItem('isLoggedIn', 'false');
+          this.router.navigateByUrl('/login');
+        }
+      },
+    });
   }
 
   onPageChange(event: any) {

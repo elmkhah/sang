@@ -35,16 +35,16 @@
       @for (his of history; track his.chatID) {
 
         <!-- پیام کاربر -->
-        <div class="flex justify-end">
-          <div class="bg-blue-500 text-white px-4 py-2 rounded-2xl max-w-[70%]">
+        <div class="flex justify-start">
+          <div class="bg-blue-500 text-white px-4 py-2 rounded-t-xl rounded-l-xl max-w-[70%]">
             <p>{{ his.userInput }}</p>
             <span class="text-xs text-gray-200">{{ his.date  }}</span>
           </div>
         </div>
 
         <!-- پیام بات -->
-        <div class="flex justify-start">
-          <div class="bg-gray-200 text-black px-4 py-2 rounded-2xl max-w-[70%]">
+        <div class="flex justify-end">
+          <div class="bg-gray-200 text-black px-4 py-2 rounded-t-xl rounded-r-xl max-w-[70%]">
             <p>{{ his.chatResponse }}</p>
             <span class="text-xs text-gray-500">{{ his.date  }}</span>
           </div>
@@ -55,11 +55,11 @@
 
     </div>
 
-    <div class="w-full h-15 gap-10 flex flex-row justify-between">
-      <div class="flex flex-row w-full p-3 rounded-2xl border-2 border-gray-400">
-        سیبلی
+    <div class="w-full h-15 gap-10 flex flex-row justify-center">
+      <div class="flex flex-row w-4/5  rounded-2xl border-2 border-gray-400 cursor-text">
+        <input [(ngModel)]="input" placeholder="متن خود را اینجا وارد کنید" class="focus:outline-none p-5 w-full placeholder:text-gray-400">
       </div>
-      <img src="svg/Clipboard%20Text.svg">
+      <img class="cursor-pointer" src="svg/Clipboard%20Text.svg" (click)="sendMessage()">
     </div>
   }
 

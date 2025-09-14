@@ -223,4 +223,13 @@ export class Master {
       },
     );
   }
+
+  profile(): Observable<HttpResponse<any>> {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${localStorage.getItem('token')}`,
+    });
+    const url = 'https://sang-e-saboor-production.ir/registery/profile/';
+    return this.http.get(url, { headers, observe: 'response' });
+  }
 }

@@ -65,14 +65,25 @@
         </div>
       </a>
 
-      <div
-        class="shadow-[0_0_20px_0_rgba(0,0,0,0.07)] p-5 rounded-xl w-full hover:bg-[#14AE5C] hover:text-white hover:scale-105 cursor-pointer transition-all duration-300"
+      <a
+        routerLink="/dashboard/profile"
+        class="w-full"
+        routerLinkActive="text-white font-black bg-[#14AE5C] rounded-xl"
       >
-        <div class="flex flex-row justify-start gap-7 items-center">
-          <img src="svg/User%20Circle.svg" class="h-8" />
-          <p>پروفایل</p>
+        <div
+          class="shadow-[0_0_20px_0_rgba(0,0,0,0.07)] group p-5 rounded-xl w-full hover:bg-[#14AE5C] hover:text-white hover:scale-105 cursor-pointer transition-all duration-300"
+        >
+          <div class="flex flex-row justify-start gap-7 items-center">
+            <img
+              routerLinkActive="invert-100"
+              src="svg/User%20Circle.svg"
+              class="h-8 group-hover:invert-100"
+            />
+            <p>پروفایل</p>
+          </div>
         </div>
-      </div>
+      </a>
+
     </div>
 
     <div>خروچ</div>
