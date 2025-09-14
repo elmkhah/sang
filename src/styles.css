@@ -3,7 +3,7 @@
 
 @font-face {
   font-family: "Pinar";
-  src: url('/font/Pinar-Black.woff2') format('woff2');
+  src: url('assets/font/Pinar-Black.woff2') format('woff2');
   font-style: normal;
   font-weight: 900;
 }
@@ -11,7 +11,7 @@
 
 @font-face {
   font-family: "Pinar";
-  src: url('/font/Pinar-Bold.woff2') format('woff2');
+  src: url('assets/font/Pinar-Bold.woff2') format('woff2');
   font-style: normal;
   font-weight: 600;
 }
@@ -19,7 +19,7 @@
 
 @font-face {
   font-family: "IRANSans";
-  src: url('/font/iransans-Med.ttf') format('truetype');
+  src: url('assets/font/iransans-Med.ttf') format('truetype');
   font-style: normal;
   font-weight: 500;
 }
@@ -27,7 +27,7 @@
 
 @font-face {
   font-family: "IRANSans";
-  src: url('/font/iransans-Bold.ttf') format('truetype');
+  src: url('assets/font/iransans-Bold.ttf') format('truetype');
   font-style: normal;
   font-weight: 800;
 }
@@ -35,7 +35,7 @@
 
 @font-face {
   font-family: "IRANSans";
-  src: url('/font/iransans-Light.ttf') format('truetype');
+  src: url('assets/font/iransans-Light.ttf') format('truetype');
   font-style: normal;
   font-weight: 200;
 }
