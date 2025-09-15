@@ -1,5 +1,5 @@
-<div class="w-screen h-screen flex flex-row overflow-x-hidden font-[IRANSans]">
-  <div class="w-1/5 p-10 flex gap-5 flex-col items-center justify-around">
+<div class="w-screen h-screen flex flex-col md:flex-row overflow-x-hidden font-[IRANSans]">
+  <div class="w-1/5 p-10 hidden md:flex gap-5 flex-col items-center justify-around">
     <div class="p-2 flex flex-col rounded-xl w-full items-center">
       <img
         src="logo/logo.png"
@@ -86,10 +86,10 @@
 
     </div>
 
-    <div>خروچ</div>
+    <div class="text-red-600 font-black cursor-pointer" (click)="this.master.logout()">خروج</div>
   </div>
 
-  <div class="w-4/5 h-screen">
+  <div class="w-full md:w-4/5 h-screen">
     <router-outlet></router-outlet>
   </div>
 </div>

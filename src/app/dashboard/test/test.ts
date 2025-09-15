@@ -5,10 +5,11 @@ import { ChangeDetectorRef } from '@angular/core';
 import moment from 'moment-jalaali';
 import { Router } from '@angular/router';
 import { Pupup } from './pupup/pupup';
+import { MobMenu } from '../../component/mob-menu/mob-menu';
 
 @Component({
   selector: 'app-test',
-  imports: [SkeletonModule, Pupup],
+  imports: [SkeletonModule, Pupup, MobMenu],
   templateUrl: './test.html',
   styleUrl: './test.css',
 })
@@ -49,4 +50,9 @@ export class Test {
 
   protected readonly localStorage = localStorage;
   protected readonly history = history;
+
+  menu = false;
+  showMenu() {
+    this.menu = !this.menu;
+  }
 }

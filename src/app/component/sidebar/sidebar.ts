@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
+import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Master } from '../../service/master';
 
 @Component({
   selector: 'app-sidebar',
-  imports: [],
+  imports: [RouterLink, RouterLinkActive],
   templateUrl: './sidebar.html',
-  styleUrl: './sidebar.css'
+  styleUrl: './sidebar.css',
 })
 export class Sidebar {
-
+  constructor(public master: Master) {}
 }
