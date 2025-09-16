@@ -1,4 +1,4 @@
-<div class="w-full h-screen p-10 flex flex-col gap-10">
+<div class="w-full h-screen p-10 flex flex-col gap-10 ">
   <div
     class="w-full shadow-[0_0_20px_0_rgba(0,0,0,0.07)] py-5 px-10 md:px-20 rounded-xl flex flex-row-reverse md:flex-row justify-between"
   >
@@ -52,6 +52,14 @@
       <div class="shadow-[0_0_20px_0_rgba(0,0,0,0.07)] p-5 rounded-xl w-full flex flex-col gap-2 font-bold">
         <p>نوشتن مقاله</p>
         <button routerLink="/addarticle" class="w-full p-3 rounded-lg text-white cursor-pointer bg-[#15ae5f]">افزودن</button>
+      </div>
+
+      <div class="shadow-[0_0_20px_0_rgba(0,0,0,0.07)] p-5 rounded-xl w-full flex flex-col gap-2 font-bold">
+        <div class="flex flex-row gap-3">
+          <p>تغییر پرامپت</p>
+          <p-tag styleClass="text-xs" severity="secondary" value="آزمایشی"></p-tag>
+        </div>
+        <button routerLink="/changeprompt" class="w-full p-3 rounded-lg text-white cursor-pointer bg-[#15ae5f]">افزودن</button>
       </div>
     </div>
   </div>

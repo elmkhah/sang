@@ -1,3 +1,12 @@
-<div class="w-full h-96 bg-green-300">
-s
+<div class="w-full shadow-[0_0_20px_0_rgba(0,0,0,0.07)] rounded-xl flex flex-col items-center justify-start" (click)="url += this.article.id ; this.router.navigateByUrl(url)">
+    <img src="image/enfj.jpg" class="w-full h-2/3 object-cover rounded-t-xl cursor-pointer">
+  <div class="h-full w-full flex flex-col justify-between p-10">
+  <h2 class="text-lg font-black cursor-pointer">{{article.title}}</h2>
+    <div class="flex flex-row justify-around">
+      <p>{{article.author}}</p>
+      <p>بدون نظر</p>
+    </div>
+  <p class="text-gray-500 text-sm">  {{article.description}}</p>
+  </div>
 </div>
+<!--{{article.image}}-->

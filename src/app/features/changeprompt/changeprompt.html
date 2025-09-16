@@ -1,0 +1,63 @@
+@if (isStaff){
+<div
+  class="flex flex-col w-screen gap-5 py-5 px-5 md:py-10 md:px-20 font-[IRANSans]"
+>
+  <!--  ناوبار-->
+  <div
+    class="w-full shadow-[0_0_20px_0_rgba(0,0,0,0.07)] items-center p-5 px-5 md:px-20 rounded-xl flex flex-row justify-between"
+  >
+    <div class="flex flex-col gap-2">
+      <p class="font-black text-xl md:text-2xl">تغییر پرامپت چت بات</p>
+      <p class="text-xs text-gray-300">خانه > چت بات > تغییر پرامپت چت بات</p>
+    </div>
+
+    <div class="flex flex-row gap-10 items-center">
+      <div
+        class="flex flex-row gap-3 items-center h-10 p-3 border-2 border-gray-300 rounded-lg"
+      >
+        <img
+          src="png/golden-coin-money-dollar-icon_24877-83458%201.png"
+          class="h-8"
+        />
+        <p class="font-black text-gray-600">
+          {{ localStorage.getItem("coin") }}
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!--  خلاصه مقاله-->
+  <div class="flex flex-col gap-2">
+    <label class="text-xs text-gray-400">پرامپت انتخابی</label>
+    <textarea
+      rows="10"
+      [(ngModel)]="description"
+      class="focus:outline-none p-3 rounded-xl border-[1px] border-gray-300"
+    ></textarea>
+  </div>
+  <!--  دکمه ثبت-->
+  <div class="w-full flex flex-row justify-between">
+    <button
+      routerLink="/dashboard/home"
+      class="cursor-pointer w-fit text-white p-3 rounded-xl bg-red-500"
+      (click)="submit()"
+    >
+      بازگشت
+    </button>
+    <button
+      class="cursor-pointer w-fit text-white p-3 rounded-xl bg-[#15ae5f]"
+      (click)="submit()"
+    >
+     ثبت تغییرات
+    </button>
+  </div>
+</div>
+}
+@else {
+  <div class="w-screen h-screen font-[IRANSans] bg-gradient-to-bl from-orange-100 to-pink-100 flex flex-col items-center justify-center gap-5 p-10 text-center">
+    <h1 class="text-4xl font-black ">مگه الکیه که هر کی از راه رسید بیاد پرامپتو عوض کنه؟؟؟</h1>
+    <p class="text-gray-600">اول لاگین کن</p>
+    <p class="text-xs text-gray-400">در ضمن، باید دسترسی داشته باشی :)</p>
+    <button routerLink="/login" class="bg-[#15ae5f] text-white shadow-lg p-5 w-1/2 font-black cursor-pointer rounded-lg">ورود</button>
+  </div>
+}

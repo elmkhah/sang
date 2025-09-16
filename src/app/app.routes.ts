@@ -14,9 +14,11 @@ import { Article } from './features/article/article';
 import { Articlelist } from './features/articlelist/articlelist';
 import { Testhistory } from './features/testhistory/testhistory';
 import { Addarticle } from './features/addarticle/addarticle';
+import { Changeprompt } from './features/changeprompt/changeprompt';
 
 export const routes: Routes = [
   { path: '', component: Landing, pathMatch: 'full' },
+  { path: 'changeprompt', component: Changeprompt },
   { path: 'addarticle', component: Addarticle },
   {
     path: 'blog',

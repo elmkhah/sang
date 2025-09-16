@@ -224,6 +224,28 @@ export class Master {
     );
   }
 
+  changePrompt(text: string): Observable<HttpResponse<any>> {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${localStorage.getItem('token')}`,
+    });
+
+    return this.http.post(
+      'https://sang-e-saboor-production.ir/chatbot/chatbotprompt/',
+      { prompt: text },
+      {
+        headers: headers,
+        observe: 'response',
+      },
+    );
+  }
+
+  articleList(): Observable<HttpResponse<any>> {
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    const url = 'https://sang-e-saboor-production.ir/article/articlelist/';
+    return this.http.get(url, { headers, observe: 'response' });
+  }
+
   profile(): Observable<HttpResponse<any>> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
