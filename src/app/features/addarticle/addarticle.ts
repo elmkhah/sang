@@ -3,7 +3,7 @@ import { EditorModule } from 'primeng/editor';
 import { Master } from '../../service/master';
 import { FormsModule } from '@angular/forms';
 import { ChangeDetectorRef } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { RouterLink, Router } from '@angular/router';
 
 @Component({
   selector: 'app-addarticle',
@@ -15,6 +15,7 @@ export class Addarticle {
   constructor(
     public master: Master,
     public changeDetectorRef: ChangeDetectorRef,
+    public router: Router,
   ) {}
   content = '';
   title = '';

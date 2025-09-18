@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Master } from '../../service/master';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { RouterLink, Router } from '@angular/router';
 import { ChangeDetectorRef } from '@angular/core';
 
 @Component({
@@ -16,6 +16,7 @@ export class Changeprompt {
   constructor(
     public master: Master,
     public changeDetectorRef: ChangeDetectorRef,
+    public router: Router,
   ) {}
 
   ngOnInit() {

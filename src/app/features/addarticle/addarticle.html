@@ -68,10 +68,11 @@
     <button
       routerLink="/dashboard/home"
       class="cursor-pointer w-fit text-white p-3 rounded-xl bg-red-500"
-      (click)="submit()"
+      (click)="this.router.navigateByUrl('/dashboard')"
     >
       بازگشت
     </button>
+
     <button
       class="cursor-pointer w-fit text-white p-3 rounded-xl bg-[#15ae5f]"
       (click)="submit()"

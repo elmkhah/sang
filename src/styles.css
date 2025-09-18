@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "primeicons/primeicons.css";
 
 
 @font-face {
@@ -57,4 +58,53 @@
 
   --primary-color: #14AE5C;
   --primary-color-text: #ffffff;
+}
+
+
+
+/*تایپوگرافی*/
+.article-content h1 {
+  @apply text-3xl font-black mt-6 mb-4 text-gray-900;
+}
+
+.article-content h2 {
+  @apply text-2xl font-black mt-5 mb-3 text-gray-900;
+}
+
+.article-content h3 {
+  @apply text-xl font-black mt-4 mb-2 text-gray-800;
+}
+
+.article-content h4 {
+  @apply text-lg font-bold mt-3 mb-2 text-gray-800;
+}
+
+.article-content p {
+  @apply text-base leading-7 mb-4 text-gray-700 text-justify;
+}
+
+.article-content ul{
+  @apply text-base leading-7 mb-4 text-gray-700 text-justify;
+}
+
+.article-content span {
+  @apply text-base leading-7 mb-4 text-gray-700 text-justify;
+}
+
+.article-content a {
+  @apply text-blue-600 hover:underline;
+}
+
+.article-content blockquote {
+  @apply border-r-4 pr-4 italic text-gray-600 my-4;
+}
+
+.article-content img {
+  @apply rounded-lg my-4;
+  width: 100%;
+  height: auto;
+}
+
+.article-content code {
+  @apply bg-gray-100 px-1 py-0.5 rounded text-sm font-mono text-red-600;
 }
