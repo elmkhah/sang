@@ -4,10 +4,11 @@ import { Master } from '../../service/master';
 import { FormsModule } from '@angular/forms';
 import { ChangeDetectorRef } from '@angular/core';
 import { RouterLink, Router } from '@angular/router';
+import { Dashnav } from '../../component/dashnav/dashnav';
 
 @Component({
   selector: 'app-addarticle',
-  imports: [EditorModule, FormsModule, RouterLink],
+  imports: [EditorModule, FormsModule, RouterLink, Dashnav],
   templateUrl: './addarticle.html',
   styleUrl: './addarticle.css',
 })

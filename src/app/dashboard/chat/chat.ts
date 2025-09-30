@@ -2,13 +2,13 @@ import { Component, ViewChild } from '@angular/core';
 import { Master } from '../../service/master';
 import { FormsModule } from '@angular/forms';
 import { ChangeDetectorRef } from '@angular/core';
-import { AfterViewChecked } from '@angular/core';
+import { Dashnav } from '../../component/dashnav/dashnav';
 import { ElementRef } from '@angular/core';
 import moment from 'moment-jalaali';
 
 @Component({
   selector: 'app-chat',
-  imports: [FormsModule],
+  imports: [FormsModule, Dashnav],
   templateUrl: './chat.html',
   styleUrl: './chat.css',
 })

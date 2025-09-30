@@ -1,12 +1,10 @@
 import { Component } from '@angular/core';
-import {ButtonModule} from 'primeng/button';
+import { ButtonModule } from 'primeng/button';
 
 @Component({
   selector: 'app-hero',
   imports: [ButtonModule],
   templateUrl: './hero.html',
-  styleUrl: './hero.css'
+  styleUrl: './hero.css',
 })
-export class Hero {
-
-}
+export class Hero {}

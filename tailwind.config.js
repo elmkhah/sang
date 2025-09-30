@@ -1,12 +1,11 @@
 module.exports = {
-  content: [],
+  content: {},
   theme: {
     extend: {
       fontFamily: {
-        Pinar: ["Pinar", "sans-serif"],
         IRANSans: ["IRANSans", "sans-serif"],
       },
     },
   },
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [require("@tailwindcss/typography"), require("taos/plugin")],
 };

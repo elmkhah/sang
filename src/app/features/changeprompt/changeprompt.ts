@@ -3,10 +3,11 @@ import { Master } from '../../service/master';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterLink, Router } from '@angular/router';
 import { ChangeDetectorRef } from '@angular/core';
+import { Dashnav } from '../../component/dashnav/dashnav';
 
 @Component({
   selector: 'app-changeprompt',
-  imports: [ReactiveFormsModule, RouterLink, FormsModule],
+  imports: [ReactiveFormsModule, RouterLink, FormsModule, Dashnav],
   templateUrl: './changeprompt.html',
   styleUrl: './changeprompt.css',
 })
@@ -22,6 +23,7 @@ export class Changeprompt {
   ngOnInit() {
     this.master.profile().subscribe({
       next: (data: any) => {
+        console.log(data);
         this.isStaff = data.body.is_staff;
         this.changeDetectorRef.detectChanges();
       },

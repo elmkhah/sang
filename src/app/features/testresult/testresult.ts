@@ -20,10 +20,7 @@ export class Testresult {
 
   ngOnInit() {
     this.master.testHistory().subscribe((testResult) => {
-      this.testResul = testResult.body.slice(
-        testResult.body.length - 1,
-        testResult.body.length,
-      );
+      this.testResul = testResult.body.slice(0, 1);
       console.log(this.testResul);
       this.url += this.testResul[0].relatedArticleId;
       console.log(this.url);

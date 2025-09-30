@@ -4,12 +4,14 @@ import { SkeletonModule } from 'primeng/skeleton';
 import moment from 'moment-jalaali';
 import { ChangeDetectorRef } from '@angular/core';
 import { PaginatorModule } from 'primeng/paginator';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
+import { Pupup } from '../../dashboard/test/pupup/pupup';
+import { Dashnav } from '../../component/dashnav/dashnav';
 
 @Component({
   selector: 'app-testhistory',
   standalone: true,
-  imports: [SkeletonModule, PaginatorModule],
+  imports: [SkeletonModule, PaginatorModule, RouterLink, Pupup, Dashnav],
   templateUrl: './testhistory.html',
   styleUrl: './testhistory.css',
 })
@@ -20,6 +22,8 @@ export class Testhistory {
   count = 0;
   rows = 5;
   first = 0;
+  isModalOpen = false;
+  selectedItem: any;
 
   constructor(
     public master: Master,
@@ -45,6 +49,7 @@ export class Testhistory {
         this.isLoading = false;
         this.updatePage();
         console.log(this.pagedItems);
+
         this.changeDetector.detectChanges();
       },
       error: (err) => {

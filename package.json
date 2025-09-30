@@ -37,7 +37,9 @@
     "quill": "^2.0.3",
     "rxjs": "~7.8.0",
     "tailwindcss": "^4.1.12",
-    "tslib": "^2.3.0"
+    "taos": "^1.0.5",
+    "tslib": "^2.3.0",
+    "zarinpal-node-sdk": "^2.2.0"
   },
   "devDependencies": {
     "@angular/build": "^20.1.5",

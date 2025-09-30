@@ -1,7 +1,8 @@
-<div class="w-screen h-screen flex flex-col md:flex-row overflow-x-hidden font-[IRANSans]">
-  <div class="w-1/5 p-10 hidden md:flex gap-5 flex-col items-center justify-around">
+<div class="w-screen  flex flex-col md:flex-row overflow-x-hidden font-[IRANSans]">
+  <div class="w-1/5 p-10 hidden md:flex gap-5 flex-col items-center h-screen overflow-y-hidden justify-around">
     <div class="p-2 flex flex-col rounded-xl w-full items-center">
       <img
+        routerLink="/dashboard/home/"
         src="logo/logo.png"
         class="h-30 hover:scale-110 transition-all duration-300"
       />
@@ -23,6 +24,26 @@
               class="h-8 group-hover:invert-100"
             />
             <p>خانه</p>
+          </div>
+        </div>
+      </a>
+
+
+      <a
+        routerLink="/blog"
+        class="w-full"
+        routerLinkActive="text-white font-black bg-[#14AE5C] rounded-xl"
+      >
+        <div
+          class="shadow-[0_0_20px_0_rgba(0,0,0,0.07)] group p-5 rounded-xl w-full hover:bg-[#14AE5C] hover:text-white hover:scale-105 cursor-pointer transition-all duration-300"
+        >
+          <div class="flex flex-row justify-start gap-7 items-center">
+            <img
+              routerLinkActive="invert-100"
+              src="svg/Book%202.svg"
+              class="h-8 group-hover:invert-100"
+            />
+            <p>بلاگ</p>
           </div>
         </div>
       </a>

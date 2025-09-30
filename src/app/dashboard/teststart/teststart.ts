@@ -5,10 +5,11 @@ import { FormsModule } from '@angular/forms';
 import { Master } from '../../service/master';
 import { ChangeDetectorRef } from '@angular/core';
 import { Router } from '@angular/router';
+import { Dashnav } from '../../component/dashnav/dashnav';
 
 @Component({
   selector: 'app-teststart',
-  imports: [RadioButtonModule, FormsModule],
+  imports: [RadioButtonModule, FormsModule, Dashnav],
   templateUrl: './teststart.html',
   styleUrl: './teststart.css',
 })
@@ -34,14 +35,12 @@ export class Teststart {
       this.master.questions(1, 1, 60).subscribe((questions) => {
         this.qcount = questions.body.questions.length;
         this.qlist = questions.body.questions;
-        console.log(this.qlist);
         this.changeDetector.detectChanges();
       });
     } else if (this.testName === 'gad-7') {
       this.master.questions(2, 1, 7).subscribe((questions) => {
         this.qcount = questions.body.questions.length;
         this.qlist = questions.body.questions;
-        console.log(this.qlist);
         this.changeDetector.detectChanges();
       });
     }
@@ -56,6 +55,7 @@ export class Teststart {
   nextQ() {
     if (this.currentq < this.qcount - 1) {
       this.currentq++;
+      this.changeDetector.detectChanges();
     } else {
       this.submit();
     }
@@ -79,6 +79,11 @@ export class Teststart {
       this.nextQ();
       this.changeDetector.detectChanges();
     }, 300);
+  }
+
+  menu = false;
+  showMenu() {
+    this.menu = !this.menu;
   }
 
   protected readonly localStorage = localStorage;

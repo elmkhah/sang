@@ -1,29 +1,8 @@
 <div
-  class="flex flex-col w-screen gap-5 py-5 px-5 md:py-10 md:px-20 font-[IRANSans]"
+  class="flex overflow-x-hidden flex-col w-full gap-5 py-5 px-5 md:py-10 md:px-20 font-[IRANSans]"
 >
   <!--  ناوبار-->
-  <div
-    class="w-full shadow-[0_0_20px_0_rgba(0,0,0,0.07)] items-center p-5 px-5 md:px-20 rounded-xl flex flex-row justify-between"
-  >
-    <div class="flex flex-col gap-2">
-      <p class="font-black text-xl md:text-2xl">نوشتن مقاله جدید</p>
-      <p class="text-xs text-gray-300">خانه > مقالات > نوشتن مقاله جدید</p>
-    </div>
-
-    <div class="flex flex-row gap-10 items-center">
-      <div
-        class="flex flex-row gap-3 items-center h-10 p-3 border-2 border-gray-300 rounded-lg"
-      >
-        <img
-          src="png/golden-coin-money-dollar-icon_24877-83458%201.png"
-          class="h-8"
-        />
-        <p class="font-black text-gray-600">
-          {{ localStorage.getItem("coin") }}
-        </p>
-      </div>
-    </div>
-  </div>
+  <app-dashnav title="افزودن مقاله"></app-dashnav>
 
   <!--  اطلاعات اولیه-->
   <div class="grid grid-cols-1 md:grid-cols-3 gap-5">

@@ -1,31 +1,6 @@
 <div class="w-full h-screen p-10 flex flex-col gap-10 overflow-x-hidden">
   <!--  ناوبار بالا-->
-  <div
-    class="w-full shadow-[0_0_20px_0_rgba(0,0,0,0.07)] items-center py-5 px-10 md:px-20 rounded-xl flex flex-row-reverse md:flex-row justify-between"
-  >
-    <p class="font-black text-lg md:text-2xl">آزمون های روان شناختی</p>
-
-    <div class="flex flex-row gap-10 items-center">
-      <div class="flex flex-row gap-5 invert-50 h-6">
-        <img src="svg/Home%20Smile%20Angle.svg" class="hidden md:flex"/>
-        <img src="svg/Hamburger%20Menu.svg" class="flex md:hidden" (click)="showMenu()">
-
-      </div>
-
-      <div
-        class="hidden md:flex flex-row gap-3 items-center h-10 p-3 border-2 border-gray-300 rounded-lg"
-      >
-        <img
-          src="png/golden-coin-money-dollar-icon_24877-83458%201.png"
-          class="h-8"
-        />
-        <p class="font-black text-gray-600">
-          {{ localStorage.getItem("coin") }}
-        </p>
-      </div>
-    </div>
-  </div>
-
+  <app-dashnav title="آزمون های روان شناختی"></app-dashnav>
   <div class="w-full shadow-[0_0_20px_0_rgba(0,0,0,0.07)] items-center py-5 px-10 md:px-20 rounded-xl flex md:hidden flex-row justify-around">
     <p>تعداد سکه های شما: </p>
     <p>{{localStorage.getItem('coin')}}</p>
@@ -217,8 +192,6 @@
     (close)="isModalOpen = false"
   ></app-pupup>
 
-  @if(menu){
-    <app-mob-menu class=" transition-all ease-in-out duration-500" (show)="showMenu()"></app-mob-menu>
-  }
+
 </div>
 

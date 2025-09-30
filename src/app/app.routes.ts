@@ -15,9 +15,13 @@ import { Articlelist } from './features/articlelist/articlelist';
 import { Testhistory } from './features/testhistory/testhistory';
 import { Addarticle } from './features/addarticle/addarticle';
 import { Changeprompt } from './features/changeprompt/changeprompt';
+import { Posts } from './dashboard/blog/posts/posts';
+import { Editblog } from './features/editblog/editblog';
+import { About } from './landing/about/about';
 
 export const routes: Routes = [
   { path: '', component: Landing, pathMatch: 'full' },
+  { path: 'about', component: About },
   { path: 'changeprompt', component: Changeprompt },
   { path: 'addarticle', component: Addarticle },
   {
@@ -32,6 +36,8 @@ export const routes: Routes = [
     component: Dashboard,
     canActivate: [authGuard],
     children: [
+      { path: 'editblog/:articleId', component: Editblog },
+      { path: 'posts', component: Posts },
       { path: 'chat', component: Chat },
       { path: 'profile', component: Profile },
       {

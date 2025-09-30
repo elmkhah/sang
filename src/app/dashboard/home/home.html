@@ -1,12 +1,10 @@
-<div class="w-full h-screen p-10 overflow-x-hidden flex flex-col gap-10 ">
-  <div
-    class="w-full shadow-[0_0_20px_0_rgba(0,0,0,0.07)] py-5 px-10 md:px-20 rounded-xl flex flex-row-reverse md:flex-row justify-between"
-  >
-    <p class="font-black">داشبورد کاربری</p>
-    <img src="svg/Hamburger%20Menu.svg" class="flex md:hidden" (click)="showMenu()" />
-    <img src="svg/Alarm.svg" class="md:flex hidden" />
+<div class="w-full  p-10 overflow-x-hidden flex flex-col gap-10 ">
 
-  </div>
+<!--  ناوبار-->
+
+  <app-dashnav title="داشبورد کاربری"></app-dashnav>
+
+
 
   <div class="flex flex-col md:flex-row w-full gap-10">
     <div class="flex flex-col w-full md:w-3/4 gap-10 ">
@@ -42,33 +40,41 @@
       </div>
     </div>
 
-    <div class="flex flex-col w-full md:w-1/4 gap-10">
+    <div class="flex flex-col w-full md:w-1/4 gap-10 ">
       <div
         class="shadow-[0_0_20px_0_rgba(0,0,0,0.07)] cursor-pointer rounded-xl w-full"
         (click)="this.router.navigateByUrl('dashboard/chat')"
       >
         <img src="image/banner2.jpg" class="rounded-xl" />
       </div>
-      <div class="shadow-[0_0_20px_0_rgba(0,0,0,0.07)] p-5 rounded-xl w-full flex flex-col gap-2 font-bold">
-        <p>نوشتن مقاله</p>
-        <button routerLink="/addarticle" class="w-full p-3 rounded-lg text-white cursor-pointer bg-[#15ae5f]">افزودن</button>
-      </div>
+      @if (isLoading()) {
+        <p>در حال لود</p>
+      } @else {
+        @if (this.isBlogAdmin){
+          <div class="shadow-[0_0_20px_0_rgba(0,0,0,0.07)] p-5 rounded-xl w-full flex flex-col gap-2 font-bold">
+                    <p>لیست مقالات</p>
+            <button routerLink="/dashboard/posts" class="w-full p-3 rounded-lg text-white cursor-pointer bg-[#15ae5f]">مشاهده و ویرایش</button>
+          </div>
+        }
+      }
 
-      <div class="shadow-[0_0_20px_0_rgba(0,0,0,0.07)] p-5 rounded-xl w-full flex flex-col gap-2 font-bold">
-        <div class="flex flex-row gap-3">
-          <p>تغییر پرامپت</p>
-          <p-tag styleClass="text-xs" severity="secondary" value="آزمایشی"></p-tag>
-        </div>
-        <button routerLink="/changeprompt" class="w-full p-3 rounded-lg text-white cursor-pointer bg-[#15ae5f]">افزودن</button>
-      </div>
+      @if (isLoading()) {
+        <p>در حال لود</p>
+      } @else {
+        @if (this.isPromptAdmin){
+          <div class="shadow-[0_0_20px_0_rgba(0,0,0,0.07)] p-5 rounded-xl w-full flex flex-col gap-2 font-bold">
+            <div class="flex flex-row gap-3">
+              <p>تغییر پرامپت</p>
+              <p-tag styleClass="text-xs" severity="secondary" value="آزمایشی"></p-tag>
+            </div>
+            <button routerLink="/changeprompt" class="w-full p-3 rounded-lg text-white cursor-pointer bg-[#15ae5f]">افزودن</button>
+          </div>
+        }
+      }
+
+
     </div>
   </div>
 </div>
 
 
-
-
-
-@if(menu){
-  <app-mob-menu class=" transition-all ease-in-out duration-500" (show)="showMenu()"></app-mob-menu>
-}

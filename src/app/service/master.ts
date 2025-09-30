@@ -224,6 +224,36 @@ export class Master {
     );
   }
 
+  editArticle(
+    title: any,
+    author: any,
+    content: any,
+    description: any,
+    image: any,
+    id: any,
+  ): Observable<HttpResponse<any>> {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${localStorage.getItem('token')}`,
+    });
+    let url = 'https://sang-e-saboor-production.ir/article/editarticle/?id=';
+    url += id;
+    return this.http.post(
+      url,
+      {
+        content: content,
+        title: title,
+        author: author,
+        description: description,
+        image: image,
+      },
+      {
+        headers: headers,
+        observe: 'response',
+      },
+    );
+  }
+
   changePrompt(text: string): Observable<HttpResponse<any>> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
