@@ -1,38 +1,55 @@
 <div
-  class="w-full font-[IRANSans] mb-0 p-10 justify-center items-center md:px-40 mt-10 bg-[#15ae5c] grid gap-20 grid-cols-1 md:grid-cols-3"
+  class="w-full font-[IRANSans] mb-0 p-10 justify-center md:px-40 mt-10 bg-[#15ae5c] grid gap-20 grid-cols-1 md:grid-cols-3"
 >
   <div class="w-full flex flex-col gap-5">
     <p class="text-white font-black text-xl">درباره سنگ صبور</p>
     <p class="text-gray-100 text-justify font-light text-sm">
-      سنگ صبور یه اپلیکیشن مراقبت و سلامت روان هستش که به ما کمک میکنه سنگ صبور
-      یه اپلیکیشن مراقبت و سلامت روان هستش که به ما کمک میکنه سنگ صبور یه
-      اپلیکیشن مراقبت و سلامت روان هستش که به ما کمک میکنه
+      سنگ صبور یک اپلیکیشن مراقبت و سلامت روان است که با فراهم کردن فضایی امن و صمیمانه، به شما کمک می‌کند احساسات و افکارتان را آزادانه بیان کنید. با بهره‌گیری از آزمون‌های روان‌شناختی معتبر، گفت‌وگو با چت‌بات هوشمند و محتوای تخصصی، می‌توانید خودتان را بهتر بشناسید و گامی مؤثر در مسیر آرامش و رشد فردی بردارید.
     </p>
     <div class="w-full justify-end">
-      <button
-        class="bg-green-100 justify-end cursor-pointer text-sm w-auto m-auto p-2 rounded-xl text-[#15ae5c]"
-      >
-        اطلاعات بیشتر
-      </button>
+
     </div>
   </div>
+
   <div class="w-full flex flex-col gap-5">
     <p class="text-white font-black text-xl">درباره ما</p>
     <ul class="flex flex-col gap-2 text-white font-light text-sm">
-      <li>درباره ما</li>
-      <li>تماس با ما</li>
-      <li>فرصت های همکاری</li>
-      <li>گزارش اشکال</li>
-      <li>سیاست حریم خصوصی</li>
+      <li routerLink="/about/" class="cursor-pointer">درباره ما</li>
+      <li routerLink="/contact/" class="cursor-pointer">تماس با ما</li>
+      <li class="cursor-pointer">فرصت های همکاری</li>
+      <li class="cursor-pointer">گزارش اشکال</li>
+      <li class="cursor-pointer">سیاست حریم خصوصی</li>
     </ul>
   </div>
+
+
   <div class="w-full flex flex-col gap-5">
-    <p class="text-white font-black text-xl">همراه ما باشید</p>
-    <div class="flex flex-row justify-around">
-      <img src="svg/Alarm.svg">
-      <img src="svg/Alarm.svg">
-      <img src="svg/Alarm.svg">
-      <img src="svg/Alarm.svg">
+    <p class="text-white font-black text-xl">ارتباط با ما</p>
+    <div class="flex flex-col justify-around gap-3">
+      <div class="w-full flex flex-row gap-3 text-white">
+        <img src="png/phone-fill.png" class="invert-100">
+        <a href="tel:09189020051"><p class="cursor-pointer">09189020051</p></a>
+      </div>
+
+
+      <div class="w-full flex flex-row gap-3 text-white">
+        <img src="png/phone-fill.png" class="invert-100">
+        <a href="tel:09140917973"><p class="cursor-pointer">09140917973</p></a>
+      </div>
+
+      <div class="w-full flex flex-row gap-3 text-white">
+        <img src="png/mail-unread-line.png" class="invert-100">
+        <a href="mail_to:aaaelmkhah@gmail.com"><p class="cursor-pointer">info@sangeSaboor.ir</p></a>
+      </div>
+
+
+      <div class="w-full flex flex-row gap-3 text-white">
+        <a href="https://linkedin.com"><img src="png/linkedin-box-line.png" class="invert-100 cursor-pointer" ></a>
+        <a href="https://github.io"><img src="png/github-line.png" class="invert-100 cursor-pointer"></a>
+        <a href="https://t.me"><img src="png/telegram-2-line.png" class="invert-100 cursor-pointer" ></a>
+      </div>
+
+
 
     </div>
   </div>

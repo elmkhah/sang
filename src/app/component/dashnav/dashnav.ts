@@ -18,4 +18,6 @@ export class Dashnav {
   toggleDrawer() {
     this.drawerVisible = !this.drawerVisible;
   }
+
+  protected readonly localStorage = localStorage;
 }

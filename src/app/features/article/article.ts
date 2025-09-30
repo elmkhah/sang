@@ -6,9 +6,11 @@ import { Nav } from '../../landing/nav/nav';
 import moment from 'moment-jalaali';
 import { Footer } from '../../landing/footer/footer';
 import { SkeletonModule } from 'primeng/skeleton';
+import { Blogsidebar } from '../../component/blogsidebar/blogsidebar';
+
 @Component({
   selector: 'app-article',
-  imports: [Nav, Footer, SkeletonModule],
+  imports: [Nav, Footer, SkeletonModule, Blogsidebar],
   templateUrl: './article.html',
   styleUrl: './article.css',
 })

@@ -18,10 +18,12 @@ import { Changeprompt } from './features/changeprompt/changeprompt';
 import { Posts } from './dashboard/blog/posts/posts';
 import { Editblog } from './features/editblog/editblog';
 import { About } from './landing/about/about';
+import { Contact } from './landing/contact/contact';
 
 export const routes: Routes = [
   { path: '', component: Landing, pathMatch: 'full' },
   { path: 'about', component: About },
+  { path: 'contact', component: Contact },
   { path: 'changeprompt', component: Changeprompt },
   { path: 'addarticle', component: Addarticle },
   {

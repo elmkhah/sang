@@ -4,9 +4,9 @@ import { Nav } from '../nav/nav';
 import { Footer } from '../footer/footer';
 
 @Component({
-  selector: 'app-about',
+  selector: 'app-contact',
   imports: [Hero, Nav, Footer],
-  templateUrl: './about.html',
-  styleUrl: './about.css',
+  templateUrl: './contact.html',
+  styleUrl: './contact.css',
 })
-export class About {}
+export class Contact {}

@@ -14,22 +14,30 @@
     >
       بلاگ
     </p>
-    <p
-      class="p-3 text-gray-500 cursor-pointer hover:border-b-2 hover:border-b-gray-400 transition-transform duration-300"
+    <p  routerLinkActive="text-black font-black "
+      class="p-3 text-gray-500 cursor-pointer hover:border-b-2 hover:border-b-gray-400 transition-transform duration-300" routerLink="/contact/"
     >
       تماس با ما
     </p>
-    <p
-      class="p-3 text-gray-500 cursor-pointer hover:border-b-2 hover:border-b-gray-400 transition-transform duration-300"
+    <p  routerLinkActive="text-black font-black "
+      class="p-3 text-gray-500 cursor-pointer hover:border-b-2 hover:border-b-gray-400 transition-transform duration-300" routerLink="/about/"
     >
       درباره ما
     </p>
 
-    <p
-      routerLink="/dashboard/home" class="p-3 text-white bg-[#15AE5C] rounded-xl cursor-pointer hover:scale-105 hover:border-b-black transition-transform duration-300"
-    >
-      ورود/ثبت نام
-    </p>
+    @if (isLogin()) {
+      <p
+        routerLink="/dashboard/home" class="p-3 min-w-40 items-center text-center text-white bg-[#15AE5C] rounded-xl cursor-pointer hover:scale-105 hover:border-b-black transition-transform duration-300"
+      >
+         داشبورد  {{this.name}}
+      </p>
+    } @else {
+      <p
+        routerLink="/dashboard/home" class="p-3 min-w-40 text-center items-center text-white bg-[#15AE5C] rounded-xl cursor-pointer hover:scale-105 hover:border-b-black transition-transform duration-300"
+      >
+        ورود/ثبت نام
+      </p>
+    }
 
   </div>
 
