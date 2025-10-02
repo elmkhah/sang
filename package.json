@@ -39,7 +39,8 @@
     "tailwindcss": "^4.1.12",
     "taos": "^1.0.5",
     "tslib": "^2.3.0",
-    "zarinpal-node-sdk": "^2.2.0"
+    "zarinpal-node-sdk": "^2.2.0",
+    "zone.js": "^0.15.1"
   },
   "devDependencies": {
     "@angular/build": "^20.1.5",

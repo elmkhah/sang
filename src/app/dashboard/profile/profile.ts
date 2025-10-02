@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import { Master } from '../../service/master';
 import moment from 'moment-jalaali';
 import { ChangeDetectorRef } from '@angular/core';
+import { Dashnav } from '../../component/dashnav/dashnav';
 
 @Component({
   selector: 'app-profile',
-  imports: [],
+  imports: [Dashnav],
   templateUrl: './profile.html',
   styleUrl: './profile.css',
 })
