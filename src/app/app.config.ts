@@ -15,7 +15,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
-    // { provide: LocationStrategy, useClass: HashLocationStrategy },
+    { provide: LocationStrategy, useClass: HashLocationStrategy },
     provideZonelessChangeDetection(),
     provideRouter(routes),
     provideAnimationsAsync(),

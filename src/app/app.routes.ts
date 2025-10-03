@@ -19,6 +19,7 @@ import { Posts } from './dashboard/blog/posts/posts';
 import { Editblog } from './features/editblog/editblog';
 import { About } from './landing/about/about';
 import { Contact } from './landing/contact/contact';
+import { Notfount404 } from './component/notfount404/notfount404';
 
 export const routes: Routes = [
   { path: '', component: Landing, pathMatch: 'full' },
@@ -57,5 +58,5 @@ export const routes: Routes = [
   },
 
   { path: 'login', component: Login },
-  { path: '**', component: Landing, pathMatch: 'full' },
+  { path: '**', component: Notfount404, pathMatch: 'full' },
 ];
