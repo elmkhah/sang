@@ -19,10 +19,13 @@ import { Posts } from './dashboard/blog/posts/posts';
 import { Editblog } from './features/editblog/editblog';
 import { About } from './landing/about/about';
 import { Contact } from './landing/contact/contact';
+<<<<<<< HEAD
 import { Notfount404 } from './component/notfount404/notfount404';
 import { PrivacyPolicy } from './landing/privacy-policy/privacy-policy';
 import { Job } from './landing/job/job';
 import { BugReport } from './landing/bug-report/bug-report';
+=======
+>>>>>>> parent of 1364acc (fix login page and 404)
 
 export const routes: Routes = [
   { path: '', component: Landing, pathMatch: 'full' },
@@ -64,5 +67,5 @@ export const routes: Routes = [
   },
 
   { path: 'login', component: Login },
-  { path: '**', component: Notfount404, pathMatch: 'full' },
+  { path: '**', component: Landing, pathMatch: 'full' },
 ];

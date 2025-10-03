@@ -1,5 +1,5 @@
 
-<div class="h-full flex flex-col-reverse md:flex-row items-center  justify-center z-10 font-[IRANSans]">
+<div class="w-screen h-screen flex flex-col-reverse md:flex-row items-center  justify-center z-10 font-[IRANSans]">
   <div class="md:w-2/5 h-3/5 md:h-screen   flex justify-center flex-col gap-5 p-10 md:p-20 shadow-none md:shadow-2xl items-center">
 
 
@@ -20,7 +20,7 @@
 
 
     <div class="w-full">
-      <p-button (keydown.enter)="loginClick()" (click)="loginClick()" [label]="isLoading()?'در حال ورود...':'ورود'"  styleClass="w-full" />
+      <p-button (click)="loginClick()" label="ورود"  styleClass="w-full" />
 
     </div>
 <!--    [loading]="loading" (onClick)="load()-->
