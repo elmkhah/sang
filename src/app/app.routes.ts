@@ -20,13 +20,19 @@ import { Editblog } from './features/editblog/editblog';
 import { About } from './landing/about/about';
 import { Contact } from './landing/contact/contact';
 import { Notfount404 } from './component/notfount404/notfount404';
+import { PrivacyPolicy } from './landing/privacy-policy/privacy-policy';
+import { Job } from './landing/job/job';
+import { BugReport } from './landing/bug-report/bug-report';
 
 export const routes: Routes = [
   { path: '', component: Landing, pathMatch: 'full' },
   { path: 'about', component: About },
   { path: 'contact', component: Contact },
   { path: 'changeprompt', component: Changeprompt },
+  { path: 'privacy-policy', component: PrivacyPolicy },
   { path: 'addarticle', component: Addarticle },
+  { path: 'bug-report', component: BugReport },
+  { path: 'job', component: Job },
   {
     path: 'blog',
     children: [

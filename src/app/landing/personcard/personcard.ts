@@ -4,6 +4,7 @@ import { Component, Input } from '@angular/core';
   selector: 'app-personcard',
   templateUrl: './personcard.html',
   styleUrl: './personcard.css',
+  imports: [],
 })
 export class Personcard {
   @Input() public person: any;

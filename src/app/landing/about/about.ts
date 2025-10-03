@@ -101,6 +101,7 @@ export class About {
       mail: 'khodadoostan@gmail.com',
       telegram: 'https://t.me/alikhodadoostan',
       phone: '09135431212',
+      english: 'ali khodadoostan',
     },
   ];
 }

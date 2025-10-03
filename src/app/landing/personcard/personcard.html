@@ -20,13 +20,20 @@
       <p class="p-2 border-b-2 font-bold font-mono hover:scale-105 transition-all duration-300 cursor-pointer text-[#15AE5C] border-[#15AE5C] " >{{person.role}}</p>
     </div>
 
-    <div class="w-2/3 flex flex-row h-8 items-center justify-center gap-3">
-      <img src="logo/app/icons8_linkedin.svg" class="w-8 h-8 cursor-pointer">
-      <img src="logo/app/icons8_telegram_app_2.svg" class="w-8 h-8 cursor-pointer">
-      <img src="logo/app/icons8_gmail.svg" class="w-8 h-8 cursor-pointer">
-      <img src="logo/app/icons8_phone.svg" class="w-8 h-8 cursor-pointer">
+    <div class="w-2/3 flex flex-row h-15 items-center justify-center gap-3">
+      <a [href]="person.linkedin" target="_blank" rel="noopener noreferrer">
+        <img src="logo/app/icons8_linkedin.svg" class="w-15 h-15 cursor-pointer">
+      </a>
+      <a [href]="person.telegram" target="_blank" rel="noopener noreferrer">
+        <img src="logo/app/icons8_telegram_app_2.svg" class="w-15 h-15 cursor-pointer">
+      </a>
+      <a [href]="'mailto:'+person.mail" target="_blank" rel="noopener noreferrer">
+        <img src="logo/app/icons8_gmail.svg" class="w-15 h-15 cursor-pointer">
+      </a>
+      <a [href]="'tel:'+person.phone">
+        <img src="logo/app/icons8_phone.svg" class="w-15 h-15 cursor-pointer">
+      </a>
     </div>
-
 
   </div>
 

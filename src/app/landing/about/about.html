@@ -3,36 +3,43 @@
     <div class="w-full px-10 md:px-30">
       <app-nav id="nav"></app-nav>
     </div>
-    <div class="w-full p-15 bg-[#15ae5c]">
-      <app-hero title="درباره ما"></app-hero>
-    </div>
+
+    <app-hero title="درباره ما"></app-hero>
+
   </div>
-
-
 
   <div class="w-full p-10 md:px-30 flex flex-col items-center">
     <div class="text-2xl font-black w-full text-center flex flex-col gap-5">
-      <p>      تولد سنگ صبور : هوشپیتال</p>
-      <p class="text-sm text-gray-600 font-medium ">
-        همه چیز از بهمن 1403 شروع شد، رویداد مدایکس (med-X)- رویداد خلق ایده های نو در حوزه هوش مصنوعی و سلامت- قرار بود توی دانشگاه علوم پزشکی اصفهان برگزار بشه و ما 6 نفر به این فکر افتادیم که یه حرکت باحال بزنیم. پس ایده سنگ صبور به سرمون زد. بعد از کلی برو بیا توی مدایکس، این ایده پخته شد و الان تبدیل شده به چیزی که دارید می بینید.
+      <p>تولد سنگ صبور : هوشپیتال</p>
+      <p class="text-sm text-gray-600 font-medium">
+        همه چیز از بهمن 1403 شروع شد، رویداد مدایکس (med-X)- رویداد خلق ایده های
+        نو در حوزه هوش مصنوعی و سلامت- قرار بود توی دانشگاه علوم پزشکی اصفهان
+        برگزار بشه و ما 6 نفر به این فکر افتادیم که یه حرکت باحال بزنیم. پس ایده
+        سنگ صبور به سرمون زد. بعد از کلی برو بیا توی مدایکس، این ایده پخته شد و
+        الان تبدیل شده به چیزی که دارید می بینید.
       </p>
     </div>
 
-    <p class="pt-30 pb-10 text-2xl font-black">رویداد خلق ایده های نو در حوزه سلامت و هوش مصنوعی - MED-X</p>
+    <p class="pt-10 md:pt-30 pb-10 text-2xl font-black">
+      رویداد خلق ایده های نو در حوزه سلامت و هوش مصنوعی - MED-X
+    </p>
 
     <div class="flex flex-col md:flex-row w-full gap-10">
       <div class="flex flex-col w-full md:w-1/2">
-        <img src="image/1743158464469.jpg" class="rounded-2xl">
+        <img src="image/1743158464469.jpg" class="rounded-2xl" />
       </div>
       <div class="flex flex-col w-full md:w-1/2">
-        <p class="text-gray-500 font-light p-10 text-justify">
-          در رویداد MED-X حدود 80 تیم از دانشگاه های مختلف کشور حضور داشتند. از ایده های حوزه تصویربرداری پزشکی گرفته تا ترک سیگار و....
-          اما ایده ما فرق داشت.
-          <br>
-          ما تا آخرین مرحله جلو رفتیم و تونستیم با نظر اساتید ارزشمند رویداد، به کامل ترین ایده برسیم. حالا هوشپیتال میتونه با افتخار اعلام کنه که سنگ صبور به اون بلوغی که نیاز داشته رسیده
+        <p class="text-gray-500 font-light md:p-10 text-justify">
+          در رویداد MED-X حدود 80 تیم از دانشگاه های مختلف کشور حضور داشتند. از
+          ایده های حوزه تصویربرداری پزشکی گرفته تا ترک سیگار و.... اما ایده ما
+          فرق داشت.
+          <br />
+          ما تا آخرین مرحله جلو رفتیم و تونستیم با نظر اساتید ارزشمند رویداد، به
+          کامل ترین ایده برسیم. حالا هوشپیتال میتونه با افتخار اعلام کنه که سنگ
+          صبور به اون بلوغی که نیاز داشته رسیده
         </p>
         <p class="px-10 py-3">محور های ایده سنگ صبور</p>
-        <ul class="px-12 text-sm text-gray-500">
+        <ul class="px-10 md:px-12 text-sm text-gray-500">
           <li>- کمک به پیشگیری و درمان مشکلات سلامت روان</li>
           <li>- حفظ حریم خصوصی کاربران</li>
           <li>- بهره گیری از چت بات هوش مصنوعی</li>
@@ -40,16 +47,16 @@
       </div>
     </div>
 
-
     <p class="pt-30 pb-10 text-2xl font-black">معرفی افراد</p>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 w-full items-center justify-center md:px-30">
-      @for (person of team;track person){
-        <app-personcard [person]="person" ></app-personcard>
+    <div
+      class="grid grid-cols-1 md:grid-cols-3 gap-10 w-full items-center justify-center md:px-30"
+    >
+      @for (person of team; track person) {
+        <app-personcard [person]="person"></app-personcard>
       }
     </div>
   </div>
-
 
   <app-footer></app-footer>
 </div>
