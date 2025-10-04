@@ -34,7 +34,7 @@
             <td>{{ post.author }}</td>
             <td>{{ post.created_at }}</td>
             <td class="">
-              <img [routerLink]="'/dashboard/editblog/'+ post.id" src="svg/Pen%20New%20Round.svg" class="hover:scale-105 transition-all duration-300 cursor-pointer w-15 h-15">
+              <img [routerLink]="'/dashboard/editblog/'+ post.slug" src="svg/Pen%20New%20Round.svg" class="hover:scale-105 transition-all duration-300 cursor-pointer w-15 h-15">
             </td>
           </tr>
         </ng-template>

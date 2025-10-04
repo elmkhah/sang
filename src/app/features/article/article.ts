@@ -20,7 +20,7 @@ export class Article {
     private master: Master,
   ) {}
 
-  id = '';
+  slug = '';
   isLoading = signal(true);
   article!: any;
   isImageLoading = true;
@@ -28,9 +28,10 @@ export class Article {
   ngOnInit() {
     document.getElementById('nav')?.scrollIntoView();
 
-    this.id = this.route.snapshot.paramMap.get('articleId')!;
-    this.master.articleDetail(this.id).subscribe({
+    this.slug = this.route.snapshot.paramMap.get('slug')!;
+    this.master.articleDetail(this.slug).subscribe({
       next: (data) => {
+        console.log(data);
         if (data.status === 200) {
           this.article = data.body;
           this.article.created_at = moment(this.article.created_at).format(

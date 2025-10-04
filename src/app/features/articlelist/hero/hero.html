@@ -1,26 +1,14 @@
-<!--<div class="flex flex-col items-center justify-center w-screen p-15 bg-gradient-to-bl from-[#15ae5c] to-green-600">-->
-<!--  <h1 class="text-white text-2xl font-black">{{title}}</h1>-->
-<!--</div>-->
-
-
-<!--<div class="flex flex-col items-center justify-center w-screen p-15-->
-<!--            bg-[url('/image/banner1.jpg')] bg-cover bg-center-->
-<!--            bg-black/50 bg-blend-multiply">-->
-<!--  <h1 class="text-white text-2xl font-black">{{title}}</h1>-->
-<!--</div>-->
-
-
-
-<!--<div class="flex flex-col items-center justify-center w-screen p-20-->
-<!--            bg-[url({{this.image}})] bg-cover bg-center bg-fixed-->
-<!--            bg-black/50 bg-blend-multiply">-->
-<!--  <h1 class="text-white text-2xl font-black">{{title}}</h1>-->
-<!--</div>-->
 
 
 
 
-<div class="flex flex-col items-center justify-center w-screen p-20
-            bg-cover bg-center bg-fixed bg-black/50 bg-blend-multiply"
->  <h1 class="text-white text-2xl font-black">{{ title }}</h1>
+<div class="relative flex flex-col items-center justify-center w-screen p-20">
+  <!-- بک‌گراند -->
+  <img [src]="image" class="absolute inset-0 w-full h-full object-cover" />
+
+  <!-- overlay نیمه شفاف -->
+  <div class="absolute inset-0 bg-black/50"></div>
+
+  <!-- متن -->
+  <h1 class="relative text-white text-2xl font-black">{{ title }}</h1>
 </div>

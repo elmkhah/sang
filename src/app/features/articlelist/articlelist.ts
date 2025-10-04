@@ -30,13 +30,14 @@ export class Articlelist {
     this.isLoading = true;
     this.master.articleList().subscribe({
       next: (data) => {
-        this.articlelist = data.body;
-        for (var a of this.articlelist) {
+        console.log(data);
+        this.articlelist = data.body.results;
+        for (let a of this.articlelist) {
           a.description = a.description.slice(0, 150);
           a.description += '...';
           a.created_at = moment(a.created_at).format('jYYYY/jMM/jDD ');
-          this.totalPages = Math.ceil(this.articlelist.length / 9);
-          this.selectedArticleList = this.articlelist.slice(0, 9);
+          this.totalPages = Math.ceil(data.body.count / 10);
+          // this.selectedArticleList = this.articlelist.slice(0, 9);
         }
         this.isLoading = false;
         this.changeDetectorRef.detectChanges();
@@ -50,7 +51,20 @@ export class Articlelist {
 
   load() {
     this.pageNumber++;
-    this.selectedArticleList = this.articlelist.slice(0, this.pageNumber * 9);
-    this.changeDetectorRef.detectChanges();
+    this.master.articleList(this.pageNumber).subscribe({
+      next: (data) => {
+        const newArticles = data.body.results.map((a: any) => {
+          a.description = a.description.slice(0, 150) + '...';
+          a.created_at = moment(a.created_at).format('jYYYY/jMM/jDD ');
+          return a;
+        });
+
+        this.articlelist = [...this.articlelist, ...newArticles];
+        this.changeDetectorRef.detectChanges();
+      },
+      error: (err) => {
+        console.log(err);
+      },
+    });
   }
 }

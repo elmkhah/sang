@@ -4,12 +4,12 @@
   <img
     src="{{ article.image }}"
     class="w-full h-2/3 object-cover rounded-t-xl cursor-pointer"
-    (click)="url += this.article.id ; this.router.navigateByUrl(url)"
+    (click)="url += this.article.slug ; this.router.navigateByUrl(url)"
   />
   <div class="h-full w-full flex flex-col p-10 pt-5 gap-5">
     <h2
       class="text-lg font-black cursor-pointer"
-      (click)="url += this.article.id ; this.router.navigateByUrl(url)"
+      (click)="url += this.article.slug ; this.router.navigateByUrl(url)"
     >
       {{ article.title }}
     </h2>

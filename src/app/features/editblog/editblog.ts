@@ -20,6 +20,13 @@ export class Editblog {
     public route: ActivatedRoute,
   ) {}
 
+  content = '';
+  title = '';
+  description = '';
+  image = '';
+  author = '';
+  slug = '';
+
   ngOnInit() {
     this.id = this.route.snapshot.paramMap.get('articleId')!;
     this.master.articleDetail(this.id.toString()).subscribe({
@@ -28,6 +35,7 @@ export class Editblog {
         this.author = data.body.author;
         this.content = data.body.content;
         this.image = data.body.image;
+        this.slug = data.body.slug;
         this.description = data.body.description;
         this.changeDetectorRef.detectChanges();
 
@@ -39,13 +47,8 @@ export class Editblog {
     });
   }
 
-  content = '';
-  title = '';
-  description = '';
-  image = '';
-  author = '';
-
   submit() {
+    console.log(this.slug);
     this.master
       .editArticle(
         this.title,
@@ -54,11 +57,12 @@ export class Editblog {
         this.description,
         this.image,
         this.id,
+        this.slug,
       )
       .subscribe({
         next: (res) => {
           this.changeDetectorRef.detectChanges();
-          alert(res.body.message);
+          alert('مقاله با موفقیت ویرایش شد');
           this.router.navigateByUrl('/dashboard/posts');
         },
         error: (err) => {

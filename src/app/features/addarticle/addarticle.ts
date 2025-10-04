@@ -23,33 +23,38 @@ export class Addarticle {
   description = '';
   image = '';
   author = '';
+  slug = '';
 
   submit() {
-    this.master
-      .addArticle(
-        this.title,
-        this.author,
-        this.content,
-        this.description,
-        this.image,
-      )
-      .subscribe({
-        next: (res) => {
-          if (res.status == 201) {
-            this.image = '';
-            this.title = '';
-            this.description = '';
-            this.content = '';
-            this.author = '';
-            this.changeDetectorRef.detectChanges();
-            alert(res.body.message);
-          }
-          console.log(res);
-        },
-        error: (err) => {
-          console.log(err);
-        },
-      });
+    if (this.author && this.content && this.image && this.description) {
+      this.master
+        .addArticle(
+          this.title,
+          this.author,
+          this.content,
+          this.description,
+          this.image,
+        )
+        .subscribe({
+          next: (res) => {
+            if (res.status == 201) {
+              this.image = '';
+              this.title = '';
+              this.description = '';
+              this.content = '';
+              this.author = '';
+              this.slug = '';
+              this.changeDetectorRef.detectChanges();
+              this.router.navigateByUrl('/dashboard/posts');
+              alert(res.body.message);
+            }
+            console.log(res);
+          },
+          error: (err) => {
+            console.log(err);
+          },
+        });
+    }
   }
 
   protected readonly localStorage = localStorage;

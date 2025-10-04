@@ -36,7 +36,7 @@ export class Posts {
   ngOnInit() {
     this.master.articleList().subscribe({
       next: (data) => {
-        this.posts = data.body;
+        this.posts = data.body.results;
         for (var a of this.posts) {
           a.description = a.description.slice(0, 150);
           a.description += '...';

@@ -193,10 +193,9 @@ export class Master {
     );
   }
 
-  articleDetail(id: string): Observable<HttpResponse<any>> {
+  articleDetail(slug: string): Observable<HttpResponse<any>> {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-    const url =
-      'https://sang-e-saboor-production.ir/article/articledetail/?id=' + id;
+    const url = 'https://sang-e-saboor-production.ir/article/' + slug;
     return this.http.get(url, { headers, observe: 'response' });
   }
 
@@ -209,7 +208,7 @@ export class Master {
   ): Observable<HttpResponse<any>> {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
     return this.http.post(
-      'https://sang-e-saboor-production.ir/article/addarticle/',
+      'https://sang-e-saboor-production.ir/article/create/',
       {
         content: content,
         title: title,
@@ -231,14 +230,14 @@ export class Master {
     description: any,
     image: any,
     id: any,
+    slug: any,
   ): Observable<HttpResponse<any>> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       Authorization: `Bearer ${localStorage.getItem('token')}`,
     });
-    let url = 'https://sang-e-saboor-production.ir/article/editarticle/?id=';
-    url += id;
-    return this.http.post(
+    let url = 'https://sang-e-saboor-production.ir/article/update/' + slug;
+    return this.http.put(
       url,
       {
         content: content,
@@ -270,9 +269,10 @@ export class Master {
     );
   }
 
-  articleList(): Observable<HttpResponse<any>> {
+  articleList(page = 1): Observable<HttpResponse<any>> {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-    const url = 'https://sang-e-saboor-production.ir/article/articlelist/';
+    const url =
+      'https://sang-e-saboor-production.ir/article/articlelist/?page=' + page;
     return this.http.get(url, { headers, observe: 'response' });
   }
 
