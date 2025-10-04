@@ -26,7 +26,7 @@ export class Landing {
   ngOnInit() {
     this.master.articleList().subscribe({
       next: (data) => {
-        this.posts = data.body.slice(0, 3);
+        this.posts = data.body.results.slice(0, 3);
         for (let a of this.posts) {
           a.description = a.description.slice(0, 150);
           a.description += '...';

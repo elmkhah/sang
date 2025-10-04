@@ -9,5 +9,5 @@ import { Input } from '@angular/core';
 })
 export class Hero {
   @Input() title!: string;
-  @Input() image: string = '/assets/image/Com.jpg';
+  @Input() image: string = 'assets/image/Com.jpg';
 }
