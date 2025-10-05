@@ -20,10 +20,14 @@ export class Testresult {
 
   ngOnInit() {
     this.master.testHistory().subscribe((testResult) => {
-      this.testResul = testResult.body.slice(0, 1);
+      console.log(testResult);
+      this.testResul = testResult.body.slice(
+        testResult.body.length - 1,
+        testResult.body.length,
+      );
       console.log(this.testResul);
-      this.url += this.testResul[0].relatedArticleId;
-      console.log(this.url);
+      // this.url += this.testResul[0].result;
+      this.url += '/gad';
       this.changeDetector.detectChanges();
     });
   }
