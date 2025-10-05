@@ -4,7 +4,7 @@
 
 
   @if (this.isLoading) {
-    <p>سلام دنیا</p>
+    <p>در حال بارگزاری...</p>
 
   } @else {
     <div class="flex flex-col gap-4 w-full p-5 max-h-screen overflow-y-auto">
@@ -12,7 +12,7 @@
 
         <!-- پیام کاربر -->
         <div class="flex justify-start">
-          <div class="bg-blue-500 text-white px-4 py-2 rounded-t-xl rounded-l-xl max-w-[70%]">
+          <div class="bg-[#14AE5C] text-white px-5 py-3 rounded-t-xl rounded-l-xl max-w-[70%]">
             <p>{{ his.userInput }}</p>
             <span class="text-xs text-gray-200">{{ his.date  }}</span>
           </div>

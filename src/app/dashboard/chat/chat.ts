@@ -41,7 +41,6 @@ export class Chat {
     this.master.chathistory(30).subscribe({
       next: (res) => {
         this.history = res.body;
-        console.log(this.history);
 
         for (let i of this.history) {
           i.date = moment(i.date).format('HH:mm jYYYY/jMM/jDD ');
@@ -50,9 +49,7 @@ export class Chat {
         this.changeDetectorRef.detectChanges();
         this.bottom.nativeElement.scrollIntoView({ behavior: 'smooth' });
       },
-      error: (error) => {
-        console.log(error);
-      },
+      error: (error) => {},
     });
   }
 
@@ -74,8 +71,8 @@ export class Chat {
       next: (res) => {
         console.log(res);
         localStorage.setItem('coin', res.body.coin);
-        this.input = '';
         this.getMessages();
+        this.changeDetectorRef.detectChanges();
       },
       error: (error) => {
         console.log(error);
