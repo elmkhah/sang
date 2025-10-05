@@ -23,6 +23,7 @@ import { Notfount404 } from './component/notfount404/notfount404';
 import { PrivacyPolicy } from './landing/privacy-policy/privacy-policy';
 import { Job } from './landing/job/job';
 import { BugReport } from './landing/bug-report/bug-report';
+import { SignUp } from './login/sign-up/sign-up';
 
 export const routes: Routes = [
   { path: '', component: Landing, pathMatch: 'full' },
@@ -64,5 +65,6 @@ export const routes: Routes = [
   },
 
   { path: 'login', component: Login },
+  { path: 'signup', component: SignUp },
   { path: '**', component: Notfount404, pathMatch: 'full' },
 ];

@@ -17,12 +17,12 @@ export class About {
       avatar: 'image/avatar/semir.jpg',
       role: 'CEO - Backend Developer',
       description: 'سیدمون :)',
-      linkedin: 'sad',
-      mail: '',
+      linkedin: 'https://www.linkedin.com/in/seyed-mojtaba-mirsoleimani/',
+      mail: 'seyedmojtabamirsoleimani@gmail.com',
       color: '#124112',
       telegram: 'https://t.me/semir_tkd',
       english: 'seyedmojtaba mirsoleimani',
-      phone: '',
+      phone: '09140917973',
     },
 
     {
