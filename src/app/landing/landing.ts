@@ -8,15 +8,17 @@ import { Card } from '../features/article/card/card';
 import moment from 'moment-jalaali';
 import { ChangeDetectorRef } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-landing',
-  imports: [Hero, Footer, Nav, AnimateOnScroll, Card, RouterLink],
+  imports: [Hero, Footer, Nav, AnimateOnScroll, Card, RouterLink, NgClass],
   templateUrl: './landing.html',
   styleUrl: './landing.css',
 })
 export class Landing {
   posts!: any;
+  position = 1;
 
   constructor(
     public master: Master,

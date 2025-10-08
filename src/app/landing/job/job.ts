@@ -2,12 +2,11 @@ import { Component } from '@angular/core';
 import { Nav } from '../nav/nav';
 import { Hero } from '../../features/articlelist/hero/hero';
 import { Footer } from '../footer/footer';
-import { Card } from './card/card';
 import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-job',
-  imports: [Nav, Hero, Footer, Card, RouterLink],
+  imports: [Nav, Hero, Footer, RouterLink],
   templateUrl: './job.html',
   styleUrl: './job.css',
 })

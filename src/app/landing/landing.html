@@ -59,45 +59,55 @@
       <div
         class="flex flex-col items-start justify-center gap-6 w-full md:w-2/5"
       >
-        <p class="text-sm text-gray-600">برای کسب و کارها</p>
+        <p class="text-sm text-gray-600">برای اولین بار</p>
         <h1 class="text-3xl font-black leading-relaxed font-[IRANSans]">
-          قوی ترین چت بات هوش مصنوعی سلامت روان
+          چت بات هوش مصنوعی سلامت روان
         </h1>
         <p class="text-gray-700">
-          قوی ترین چت بات هوش مصنوعی سلامت روان قوی ترین چت بات هوش مصنوعی سلامت
-          روان قوی ترین چت بات هوش مصنوعی سلامت روان
+سنگ صبور با کمک چت بات هوشمند و کارآمد خود، به زبان فارسی با شما درد و دل می کند و بهترین راهکار ها را برای حفظ آرامش پیشنهاد می دهد.
         </p>
 
         <!-- دکمه / باکس -->
         <div class="flex flex-col gap-4 w-full">
           <div
-            class="flex flex-row gap-10 bg-green-200 border-2 border-green-400 rounded-2xl p-5 justify-center"
+            class="flex flex-row cursor-pointer gap-10 bg-gray-100 rounded-2xl p-5 justify-start transition-all duration-300" (click)="position=1"   [ngClass]="{ 'bg-gray-200 ': position === 1 }"
+
           >
             <img src="logo/Layer_4.png" class="h-5" />
-            <div>
-              <p class="font-black text-xl">دکمه</p>
-              <p>
-                این دکمه یه دکمه باحالهن دکمه یه دکمه باحالهن دکمه یه دکمه
-                باحاله
-              </p>
+            <div class="flex flex-col gap-3">
+              <p class="font-black text-xl">همه پسند</p>
+              @if( position==1){
+              <p class="text-gray-500 text-sm">
+ارائه نسخه وب در کنار اپلیکیشن اندروید، جهت بهبود تجربه کاربری
+              </p>}
             </div>
           </div>
 
           <div
-            class="flex flex-row gap-10 bg-gray-100 rounded-2xl p-5 justify-start"
+            [ngClass]="{ 'bg-gray-200 ': position === 2 }"
+            class="flex flex-row cursor-pointer gap-10 bg-gray-100 rounded-2xl p-5 justify-start transition-all duration-300" (click)="position=2"
           >
             <img src="logo/Layer_2.png" class="h-5" />
-            <div>
-              <p class="font-black text-xl">دکمه جالبه</p>
+            <div class="flex flex-col gap-3">
+              <p class="font-black text-xl">طراحی جذاب و دوست داشتنی</p>
+              @if( position==2){
+                <p class="text-gray-500 text-sm">
+                  طراحی اپلیکیشن، اون طوری که شما دوست دارید :)
+                </p>}
             </div>
           </div>
 
           <div
-            class="flex flex-row gap-10 bg-gray-100 rounded-2xl p-5 justify-start"
+            [ngClass]="{ 'bg-gray-200 ': position === 3 }"
+            class="flex flex-row cursor-pointer gap-10 bg-gray-100 rounded-2xl p-5 justify-start transition-all duration-300" (click)="position=3"
           >
             <img src="logo/Layer_3.png" class="h-5" />
-            <div>
-              <p class="font-bold text-xl">دکمه باحاله هستشش این</p>
+            <div class="flex flex-col gap-3">
+              <p class="font-bold text-xl">ثبت نام رایگان</p>
+              @if( position==3){
+                <p class="text-gray-500 text-sm">
+                  انجام رایگان آزمون های روان شناختی، صحبت با چت بات و کلی قابلیت دیگه
+                </p>}
             </div>
           </div>
         </div>
